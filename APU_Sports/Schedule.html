@@ -3,9 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Schedule</title>
+
+    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="Schedule.css">
 </head>
 <body>
-    <h1>This is for SCHEDULE Page.</h1>
+
+<!-- NAVBAR -->
+<div class="nav-bar">
+    <div class="nav-logo">
+        <header class="logo-circle">APU</header>
+        <span>SPORT 2026</span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="Home.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Schedule.html" class="active">Schedule</a>
+        <a href="Register.html">Register</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="News.html">News</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Content.html">Content</a>
+    </nav>
+</div>
+
+<!-- HERO -->
+<section class="schedule-hero">
+    <div class="overlay"></div>
+
+    <div class="hero-text">
+        <h1>EVENT SCHEDULE</h1>
+
+        <p class="subtitle">
+            Plan your competition journey with real-time event tracking
+        </p>
+
+        <div class="hero-stats">
+            <div class="stat-box">
+                <h2>3</h2>
+                <span>Event Days</span>
+            </div>
+            <div class="stat-box">
+                <h2>45+</h2>
+                <span>Matches</span>
+            </div>
+            <div class="stat-box">
+                <h2>16</h2>
+                <span>Sports</span>
+            </div>
+            <div class="stat-box">
+                <h2>12</h2>
+                <span>Venues</span>
+            </div>
+        </div>
+
+        <div class="hero-info">
+            <p>📍 Technology Park Malaysia</p>
+            <p>📅 3-Day Sports Carnival</p>
+            <p>⏱ 9:00 AM – 10:00 PM Daily</p>
+        </div>
+
+        <a href="Register.html" class="hero-btn">VIEW FULL SCHEDULE</a>
+    </div>
+</section>
+
+<!-- MAIN -->
+<section class="schedule-container">
+
+    <!-- LEFT SIDE -->
+    <div class="events">
+
+        <h2>Yesterday's Events</h2>
+
+        <div class="event-card">
+            <h3>Swimming Heats</h3>
+            <p>Time: 9:00 AM</p>
+            <p>Location: Aquatic Center</p>
+        </div>
+
+        <div class="event-card">
+            <h3>Table Tennis Qualifiers</h3>
+            <p>Time: 2:00 PM</p>
+            <p>Location: Hall C</p>
+        </div>
+
+        <h2>Today's Events</h2>
+
+        <div class="event-card">
+            <h3>Football Match</h3>
+            <p>Time: 10:00 AM</p>
+            <p>Location: Field A</p>
+        </div>
+
+        <div class="event-card">
+            <h3>Basketball Finals</h3>
+            <p>Time: 1:00 PM</p>
+            <p>Location: Court 2</p>
+        </div>
+
+        <div class="event-card">
+            <h3>Badminton Singles</h3>
+            <p>Time: 3:00 PM</p>
+            <p>Location: Hall B</p>
+        </div>
+
+        <h2>Tomorrow's Events</h2>
+
+        <div class="event-card">
+            <h3>Volleyball Finals</h3>
+            <p>Time: 11:00 AM</p>
+            <p>Location: Court A</p>
+        </div>
+
+        <div class="event-card">
+            <h3>100m Sprint Finals</h3>
+            <p>Time: 4:00 PM</p>
+            <p>Location: Track Field</p>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="calendar">
+
+        <h2>Calendar</h2><br>
+
+        <div class="calendar-grid">
+
+            <div class="day" onclick="showEvents(1, this)">1</div>
+            <div class="day" onclick="showEvents(2, this)">2</div>
+            <div class="day" onclick="showEvents(3, this)">3</div>
+            <div class="day" onclick="showEvents(4, this)">4</div>
+            <div class="day" onclick="showEvents(5, this)">5</div>
+
+        </div>
+
+        <div id="selected-events" class="selected-events">
+            Select a day to view events
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SCRIPT -->
+<script>
+function showEvents(day, element){
+
+    const box = document.getElementById("selected-events");
+
+    // remove active
+    document.querySelectorAll('.day').forEach(d => d.classList.remove('active'));
+    element.classList.add('active');
+
+    if(day === 1){
+        box.innerHTML = "🏊 Swimming Heats - 9:00 AM<br>🏓 Table Tennis - 2:00 PM";
+    }
+    else if(day === 2){
+        box.innerHTML = "⚽ Football Match - 10:00 AM<br>🏀 Basketball Finals - 1:00 PM";
+    }
+    else if(day === 3){
+        box.innerHTML = "🏸 Badminton Singles - 3:00 PM<br>🏐 Volleyball Finals - 11:00 AM";
+    }
+    else if(day === 4){
+        box.innerHTML = "🏃 100m Sprint Finals - 4:00 PM";
+    }
+    else if(day === 5){
+        box.innerHTML = "🏆 Closing Ceremony - 6:00 PM";
+    }
+}
+</script>
+<footer class="footer">
+
+        <div class="footer-container">
+
+        <!-- Left -->
+            <div class="footer-box">
+                <h2>APU SPORT 2026</h2>
+                <p>
+                    Empowering the next generation of champions.
+                    Join the energy carnival and witness the transformation.
+                </p>
+            </div>
+
+        <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="About.html">Event Objectives</a>
+                <a href="Sports.html">Sport Categories</a>
+                <a href="Register.html">Register Now</a>
+                <a href="Schedule.html">Daily Schedule</a>
+            </div>
+
+        <!-- Community -->
+            <div class="footer-box">
+                <h3>Community</h3>
+                <a href="#">Become a Volunteer</a>
+                <a href="#">Photo Highlights</a>
+            </div>
+
+        <!-- Contact -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Technology Park Malaysia,<br> Bukit Jalil, Kuala Lumpur</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 APU Sport Management. All Rights Reserved.
+        </div>
+
+    </footer>
 </body>
 </html>
