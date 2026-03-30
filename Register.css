@@ -148,6 +148,15 @@ input:focus, select:focus {
     width: 100%;
 }
 
+.phone-num {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.phone-num input {
+    width: 100%;
+}
+
 .form-buttons {
     display: flex;
     gap: 20px;
