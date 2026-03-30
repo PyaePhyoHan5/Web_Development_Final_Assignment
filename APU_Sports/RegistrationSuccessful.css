@@ -101,21 +101,21 @@ a.active {
 /* Description */
 .success-container p {
     color: #9aa4ad;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
     margin-bottom: 40px;
 }
 
 /* Button */
-.btn {
-    display: inline-block;
+.button {
     background: #c6ff00;
     color: black;
-    padding: 16px 40px;
-    border-radius: 12px;
+    border-radius: 30px;
+    padding: 14px 30px;
     font-weight: bold;
-    text-decoration: none;
+    cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0 0 6px rgba(198, 255, 0, 0.2);
 }
 
 .btn:hover {

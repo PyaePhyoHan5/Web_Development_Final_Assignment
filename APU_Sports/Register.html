@@ -32,7 +32,7 @@
         <p>Secure your spot in the arena. Limited slots available for each category.</p>
 
         <div class="form-container">
-            <form action="" method="post">
+            <form action="RegistrationSuccessful.html" method="get">
                 <div class="row">
                     <div class="input-box">
                         <label>FULL NAME</label>
@@ -50,6 +50,21 @@
                     <input type="email" placeholder="e.g. tp012345@mail.apu.edu.my" required>
                 </div>
 
+                <div class="phone-num">
+                    <label for="phone">PHONE NUMBER</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g. (60)-xx xxxxxxx" required>
+                </div>
+
+                <div class="input-box full">
+                    <label for="level">LEVEL OF STUDY</label>
+                    <select name="level" id="level" required>
+                        <option value="" disabled selected>-- Choose Your Level Of Study --</option>
+                        <option value="Pre-University">Pre-University</option>
+                        <option value="Undergraduate">Undergraduate</option>
+                        <option value="Postgraduate">Postgraduate</option>
+                    </select>
+                </div>
+
                 <div class="input-box full">
                     <label for="sports">SELECT SPORT</label>
                     <select id="sports" name="sports" required>
@@ -60,9 +75,11 @@
                     </select>
                 </div>
 
+
+
                 <div class="form-buttons">
-                    <button type="submit" class="submit-but">SUBMIT REGISTRATION</button>
-                    <button type="reset" class="reset-but">RESET</button>
+                    <button type="submit" class="submit-btn">SUBMIT REGISTRATION</button>
+                    <button type="reset" class="reset-btn">RESET</button>
                 </div>
             </form>
 
