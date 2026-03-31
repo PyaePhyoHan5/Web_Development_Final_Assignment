@@ -70,7 +70,7 @@
                 Global tech giants have confirmed their partnership for the upcoming carnival...
             </p>
 
-            <button class="short-text">READ FULL STORY</button>
+            <button class="short-text">READ MORE</button>
 
             <hr>
 
@@ -83,6 +83,65 @@
         </div>
 
     </div>
+
+    </section>
+
+    <section class="news-grid">
+
+    <!-- CARD 1 -->
+        <div class="news-item">
+            <img src="/APU_Sports/images/news1.jpeg" alt="">
+            <span class="tag">ANNOUNCEMENT</span>
+
+            <div class="news-info">
+                <p class="date">OCT 08, 2025</p>
+                
+                <h3>Early Bird Registration Extended</h3>
+                <p>Due to overwhelming response, the 15% discount for early registrations is now valid until...</p>
+                <button class="short-text">READ MORE</button>
+                <hr>
+                <p class="full-text">
+                    The committee has decided to extend the registration window to allow more students to form teams and prepare for the competition. 
+                    Don't miss this chance to be part of the biggest sports event of the year!
+                </p>
+            </div>
+        </div>
+
+    <!-- CARD 2 -->
+        <div class="news-item">
+            <img src="/APU_Sports/images/news2.jpeg" alt="">
+            <span class="tag">SPONSORSHIP</span>
+
+            <div class="news-info">
+                <p class="date">OCT 05, 2025</p>
+                <h3>APU Tigers Rugby Team Secures New Kit Sponsor</h3>
+                <p>The Tigers are ready to roar in their new high-performance gear provided by...</p>
+                <button class="short-text">READ MORE</button>
+                <hr>
+                <p class="full-text">
+                    The APU Tigers Rugby Team has officially partnered with a new sponsor, 
+                    bringing better equipment and performance gear for upcoming matches.
+                </p>
+            </div>
+        </div>
+
+    <!-- CARD 3 -->
+        <div class="news-item">
+            <img src="/APU_Sports/images/news3.jpeg" alt="">
+            <span class="tag">EVENT</span>
+
+            <div class="news-info">
+                <p class="date">OCT 01, 2025</p>
+                <h3>Basketball Trident Games: Final Teams Announced</h3>
+                <p>The selection process is over. Meet the elite teams competing for the Trident Trophy...</p>
+                <button class="short-text">READ MORE</button>
+                <hr>
+                <p class="full-text">
+                    The APU Tigers Rugby Team has officially partnered with a new sponsor, 
+                    bringing better equipment and performance gear for upcoming matches.
+                </p>
+            </div>
+        </div>
 
     </section>
 
@@ -131,18 +190,26 @@
     </footer>
 
     <script>
-    const btn = document.querySelector(".short-text");
-    const fullText = document.querySelector(".full-text");
+    const buttons = document.querySelectorAll(".short-text");
 
-    btn.addEventListener("click", () => {
+    buttons.forEach(btn => {
 
-        fullText.classList.toggle("show");
+        btn.addEventListener("click", () => {
 
-        if (fullText.classList.contains("show")) {
-            btn.textContent = "READ LESS";
-        } else {
-            btn.textContent = "READ FULL STORY";
-        }
+            const card = btn.closest(".news-item , .card");
+            const fullText = card.querySelector(".full-text");
+
+            if (!fullText) return;
+
+            fullText.classList.toggle("show");
+
+            if (fullText.classList.contains("show")) {
+                btn.textContent = "READ LESS";
+            } else {
+                btn.textContent = "READ MORE";
+            }
+
+        });
 
     });
     </script>
