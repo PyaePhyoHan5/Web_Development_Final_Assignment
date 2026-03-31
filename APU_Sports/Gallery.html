@@ -3,9 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Gallery.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>This is for Gallery Page.</h1>
+
+    <div class="nav-bar">
+        <div class="nav-logo">
+            <header class="logo-circle">APU</header>
+            <span>SPORT 2026</span>
+        </div>
+
+            <nav class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="About.html">About</a>
+                <a href="Sports.html">Sports</a>
+                <a href="Schedule.html">Schedule</a>
+                <a href="Register.html">Register</a>
+                <a href="Gallery.html">Gallery</a>
+                <a href="News.html">News</a>
+                <a href="Faq.html">FAQ</a>
+                <a href="Content.html">Content</a>
+            </nav>
+    </div>
+
+    <div class="tit">
+        <h1>MEMORIES IN MOTION</h1>
+        <p>Captured moments from previous carnivals. Revisit the adrenaline.</p>
+    </div>
+
+    <section class="gallery">
+
+        <div class="gallery-item">
+            <img src="/APU_Sports/images/gallary2.jpg" alt="">
+            <div class="overlay">
+                <h3>Moment Highlight #1</h3>
+                <p>VIEW FULLSIZE</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/APU_Sports/images/APU_Computer-Games-Development_04.jpg" alt="">
+            <div class="overlay">
+                <h3>Moment Highlight #2</h3>
+                <p>VIEW FULLSIZE</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/APU_Sports/images/Esport.jpg" alt="">
+            <div class="overlay">
+                <h3>Moment Highlight #3</h3>
+                <p>VIEW FULLSIZE</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/APU_Sports/images/batminton.jpeg.webp" alt="">
+            <div class="overlay">
+                <h3>Moment Highlight #4</h3>
+                <p>VIEW FULLSIZE</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/APU_Sports/images/gallary3.jpg" alt="">
+            <div class="overlay">
+                <h3>Moment Highlight #5</h3>
+                <p>VIEW FULLSIZE</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="/APU_Sports/images/APU_SUKANEKA_01.jpg" alt="">
+            <div class="overlay">
+                <h3>Moment Highlight #6</h3>
+                <p>VIEW FULLSIZE</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="video-section">
+
+        <h2>EVENT TEASER 2026</h2>
+
+        <video controls muted title="APU Video">
+            <source src="/APU_Sports/images/apump4.mp4"
+            type="video/mp4">
+            Your Browser Can't Support MP4 Format.
+        </video>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+        <!-- Left -->
+            <div class="footer-box">
+                <h2>APU SPORT 2026</h2>
+                <p>
+                    Empowering the next generation of champions.
+                    Join the energy carnival and witness the transformation.
+                </p>
+            </div>
+
+        <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="About.html">Event Objectives</a>
+                <a href="Sports.html">Sport Categories</a>
+                <a href="Register.html">Register Now</a>
+                <a href="Schedule.html">Daily Schedule</a>
+            </div>
+
+        <!-- Community -->
+            <div class="footer-box">
+                <h3>Community</h3>
+                <a href="#">Become a Volunteer</a>
+                <a href="#">Photo Highlights</a>
+            </div>
+
+        <!-- Contact -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Technology Park Malaysia,<br> Bukit Jalil, Kuala Lumpur</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 APU Sport Management. All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <script>
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+
+        img.addEventListener("click", () => {
+
+            const popup = document.createElement("div");
+            popup.classList.add("popup");
+
+            const bigImg = document.createElement("img");
+            bigImg.src = img.src;
+
+            const closeBtn = document.createElement("span");
+            closeBtn.innerHTML = "&times;";
+            closeBtn.classList.add("close-btn");
+
+            popup.appendChild(bigImg);
+            popup.appendChild(closeBtn);
+            document.body.appendChild(popup);
+
+            closeBtn.onclick = () => popup.remove();
+
+            popup.onclick = (e) => {
+                if (e.target !== bigImg) popup.remove();
+            };
+        });
+
+    });
+</script>
+
+
 </body>
 </html>
