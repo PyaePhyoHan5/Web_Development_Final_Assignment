@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule</title>
 
-    <link rel="stylesheet" href="Home.css">
-    <link rel="stylesheet" href="Schedule.css">
+<link rel="stylesheet" href="Home.css">
+<link rel="stylesheet" href="Schedule.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVBAR (UNCHANGED) -->
 <div class="nav-bar">
     <div class="nav-logo">
         <header class="logo-circle">APU</header>
@@ -32,9 +32,12 @@
 
 <!-- HERO -->
 <section class="schedule-hero">
+
     <div class="overlay"></div>
 
+    <!-- LEFT TEXT -->
     <div class="hero-text">
+
         <h1>EVENT SCHEDULE</h1>
 
         <p class="subtitle">
@@ -67,13 +70,22 @@
         </div>
 
         <a href="Register.html" class="hero-btn">VIEW FULL SCHEDULE</a>
+
     </div>
+
+    <!-- RIGHT VIDEO -->
+    <div class="hero-video">
+        <video autoplay muted loop playsinline>
+            <source src="../APU_Sports/images/schedule.mp4" type="video/mp4">
+        </video>
+    </div>
+
 </section>
 
 <!-- MAIN -->
 <section class="schedule-container">
 
-    <!-- LEFT SIDE -->
+    <!-- LEFT EVENTS -->
     <div class="events">
 
         <h2>Yesterday's Events</h2>
@@ -126,19 +138,17 @@
 
     </div>
 
-    <!-- RIGHT SIDE -->
+    <!-- RIGHT CALENDAR -->
     <div class="calendar">
 
         <h2>Calendar</h2><br>
 
         <div class="calendar-grid">
-
             <div class="day" onclick="showEvents(1, this)">1</div>
             <div class="day" onclick="showEvents(2, this)">2</div>
             <div class="day" onclick="showEvents(3, this)">3</div>
             <div class="day" onclick="showEvents(4, this)">4</div>
             <div class="day" onclick="showEvents(5, this)">5</div>
-
         </div>
 
         <div id="selected-events" class="selected-events">
@@ -155,7 +165,6 @@ function showEvents(day, element){
 
     const box = document.getElementById("selected-events");
 
-    // remove active
     document.querySelectorAll('.day').forEach(d => d.classList.remove('active'));
     element.classList.add('active');
 
@@ -176,47 +185,6 @@ function showEvents(day, element){
     }
 }
 </script>
-<footer class="footer">
 
-        <div class="footer-container">
-
-        <!-- Left -->
-            <div class="footer-box">
-                <h2>APU SPORT 2026</h2>
-                <p>
-                    Empowering the next generation of champions.
-                    Join the energy carnival and witness the transformation.
-                </p>
-            </div>
-
-        <!-- Quick Links -->
-            <div class="footer-box">
-                <h3>Quick Links</h3>
-                <a href="About.html">Event Objectives</a>
-                <a href="Sports.html">Sport Categories</a>
-                <a href="Register.html">Register Now</a>
-                <a href="Schedule.html">Daily Schedule</a>
-            </div>
-
-        <!-- Community -->
-            <div class="footer-box">
-                <h3>Community</h3>
-                <a href="#">Become a Volunteer</a>
-                <a href="#">Photo Highlights</a>
-            </div>
-
-        <!-- Contact -->
-            <div class="footer-box">
-                <h3>Contact</h3>
-                <p>Technology Park Malaysia,<br> Bukit Jalil, Kuala Lumpur</p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            © 2026 APU Sport Management. All Rights Reserved.
-        </div>
-
-    </footer>
 </body>
 </html>
