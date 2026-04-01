@@ -1,11 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ</title>
+
+<link rel="stylesheet" href="Home.css">
+<link rel="stylesheet" href="Faq.css">
+
+<!-- PARTICLE BACKGROUND -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
+
 <body>
-    <h1>This is for FAQ Page.</h1>
+
+<!-- NAVBAR -->
+<div class="nav-bar">
+    <div class="nav-logo">
+        <header class="logo-circle">APU</header>
+        <span>SPORT 2026</span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="Home.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Schedule.html">Schedule</a>
+        <a href="Register.html">Register</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="News.html">News</a>
+        <a href="Faq.html" class="active">FAQ</a>
+        <a href="Content.html">Content</a>
+    </nav>
+</div>
+
+<!-- PARTICLES -->
+<div id="particles-js"></div>
+
+<!-- HERO -->
+<section class="faq-hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1 class="faq-title">FAQ</h1>
+        <p class="faq-subtitle">
+            Smart answers for <span>future champions</span>
+        </p>
+
+        <div class="faq-stats">
+            <div class="faq-box"><h2>16+</h2><p>Sports</p></div>
+            <div class="faq-box"><h2>2000+</h2><p>Athletes</p></div>
+            <div class="faq-box"><h2>3 Days</h2><p>Events</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- SEARCH -->
+<div class="faq-search">
+    <input type="text" id="searchInput" placeholder="Search questions...">
+</div>
+
+<!-- FAQ -->
+<section class="faq-container">
+
+    <!-- ITEM -->
+    <div class="faq-item">
+        <div class="question">What is APU Sports? <span>+</span></div>
+        <div class="answer">APU Sports is a large-scale university sports carnival featuring competitive events across multiple disciplines.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">Who can join APU Sports? <span>+</span></div>
+        <div class="answer">All APU students, alumni, and invited participants can join the competition.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">How do I register? <span>+</span></div>
+        <div class="answer">You can register through the official registration page on this website.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">Is registration free? <span>+</span></div>
+        <div class="answer">Some events are free, while others may require a small participation fee.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">Where can I view schedules? <span>+</span></div>
+        <div class="answer">Schedules are available on the Schedule page with real-time updates.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">Can I join multiple sports? <span>+</span></div>
+        <div class="answer">Yes, participants can join multiple sports depending on schedule availability.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">What happens if I miss my match? <span>+</span></div>
+        <div class="answer">Missing a match may result in disqualification unless valid reasons are provided.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">Are there team and individual events? <span>+</span></div>
+        <div class="answer">Yes, APU Sports includes both team-based and individual competitions.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">Will there be awards? <span>+</span></div>
+        <div class="answer">Yes, winners will receive trophies, medals, and recognition.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">Where is the event held? <span>+</span></div>
+        <div class="answer">All events take place at Technology Park Malaysia.</div>
+    </div>
+
+</section>
+
+<!-- SCRIPT -->
+<script>
+// ACCORDION
+document.querySelectorAll(".question").forEach(q=>{
+    q.addEventListener("click",()=>{
+        const item = q.parentElement;
+        const answer = q.nextElementSibling;
+        const icon = q.querySelector("span");
+
+        item.classList.toggle("active");
+        answer.classList.toggle("show");
+        icon.classList.toggle("rotate");
+    });
+});
+
+// SEARCH
+document.getElementById("searchInput").addEventListener("keyup", function(){
+    let filter = this.value.toLowerCase();
+    document.querySelectorAll(".faq-item").forEach(item=>{
+        let text = item.innerText.toLowerCase();
+        item.style.display = text.includes(filter) ? "" : "none";
+    });
+});
+
+// PARTICLES
+tsParticles.load("particles-js", {
+    particles: {
+        number: { value: 60 },
+        color: { value: "#c6ff00" },
+        links: {
+            enable: true,
+            distance: 120,
+            color: "#c6ff00",
+            opacity: 0.3
+        },
+        move: { enable: true, speed: 1 },
+        size: { value: 2 }
+    },
+    background: { color: "#050b10" }
+});
+</script>
+
 </body>
 </html>
