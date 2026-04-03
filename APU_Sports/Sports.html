@@ -1,11 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APU Sports</title>
+<link rel="stylesheet" href="Home.css">
+<link rel="stylesheet" href="sports.css">
 </head>
+
 <body>
-    <h1>This is for SPORTS Page.</h1>
+
+<!-- NAV -->
+<div class="nav-bar">
+    <div class="nav-logo">
+        <header class="logo-circle">APU</header>
+        <span>SPORT 2026</span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Sports.html" class="active">Sports</a>
+        <a href="Schedule.html">Schedule</a>
+        <a href="Register.html">Register</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="News.html">News</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Content.html">Content</a>
+    </nav>
+</div>
+
+<!-- SECTION -->
+<section class="sports-section">
+    <h1 class="title">Explore Sports</h1>
+
+    <div id="sportsGrid" class="sports-grid"></div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-container">
+
+        <span class="close">&times;</span>
+
+        <div class="modal-left">
+            <img id="modalImg">
+        </div>
+
+        <div class="modal-right">
+            <h1 id="modalTitle"></h1>
+            <p id="modalDesc"></p>
+
+            <div class="modal-details">
+                <p><strong>President:</strong> <span id="modalPresident"></span></p>
+                <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+                <p><strong>Advisor:</strong> <span id="modalAdvisor"></span></p>
+            </div>
+
+            <button class="join-btn">Join Club</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="sports.js"></script>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h2>APU SPORT 2026</h2>
+            <p>
+                Empowering the next generation of champions.
+                Join the energy carnival and witness the transformation.
+            </p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="About.html">Event Objectives</a>
+            <a href="Sports.html">Sport Categories</a>
+            <a href="Register.html">Register Now</a>
+            <a href="Schedule.html">Daily Schedule</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Community</h3>
+            <a href="#">Become a Volunteer</a>
+            <a href="#">Photo Highlights</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>Technology Park Malaysia,<br> Bukit Jalil, Kuala Lumpur</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 APU Sport Management. All Rights Reserved.
+    </div>
+
+</footer>
+
 </body>
 </html>
