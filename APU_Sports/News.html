@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="PyaePhyoHan TP082936">
     <link rel="stylesheet" href="News.css">
-    <script src="news.js"></script>
-    <title>Document</title>
+    <title>News Page</title>
 </head>
 <body>
     <div class="nav-bar">
@@ -194,30 +194,9 @@
 
     </footer>
 
-    <script>
-    const buttons = document.querySelectorAll(".short-text");
+    <script src="news.js"></script>
 
-    buttons.forEach(btn => {
 
-        btn.addEventListener("click", () => {
-
-            const card = btn.closest(".news-item , .card");
-            const fullText = card.querySelector(".full-text");
-
-            if (!fullText) return;
-
-            fullText.classList.toggle("show");
-
-            if (fullText.classList.contains("show")) {
-                btn.textContent = "READ LESS";
-            } else {
-                btn.textContent = "READ MORE";
-            }
-
-        });
-
-    });
-    </script>
 
 </body>
 </html>
