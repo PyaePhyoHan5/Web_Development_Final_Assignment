@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background: #050b10;
+    color: white;
+    padding-top: 90px;
+}
+
+.nav-bar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 11, 16, 0.9);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 1000;    
+}
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: #c6ff00;
+}
+
+.logo-circle{
+    background: #c6ff00;
+    color: black;
+    padding: 10px 12px;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.nav-links{
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+    flex-wrap: wrap; /* make for user responsive */
+}
+
+a {
+    text-decoration: none;
+    color: #c6ff00;
+    font-size: 20px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.3s;
+    text-align: right;
+}
+
+a:hover{
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a.active {
+    color: #c6ff00;
+}
+
+.tit h1{
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    padding: 0%;
+}
+
+.tit span {
+    color: #c6ff00;
+}
+
+.tit p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.volunteer {
+    display: flex;
+    gap: 50px;
+    padding: 80px;
+}
+
+.roles {
+    flex: 1;
+}
+
+.roles h2 {
+    color: #c6ff00;
+    margin-bottom: 30px;
+}
+
+.single-role {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+
+    border-radius: 20px;
+    background: #0b141c;
+    border: 1px solid #1e2a38;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.role-number {
+    width: 50px;
+    height: 50px;
+    background: #111;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.single-role:hover {
+    border: 1px solid #c6ff00;
+}
+
+.single-role:hover .role-number {
+    background: #c6ff00;
+    color: black;
+}
+
+.form-box {
+    flex: 1;
+    background: #0b141c;
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid #1e2a38;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #1e2a38;
+    background: #050b10;
+    color: white;
+    font-size: 15px;
+}
+
+.calendar-box {
+    background: rgba(255,255,255,0.03);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+
+    border: 1px solid #1e2a38;
+}
+
+.calendar-box p {
+    margin-bottom: 15px;
+    color: #888;
+    font-size: 14px;
+}
+
+.days {
+    display: flex;
+    gap: 15px;
+}
+
+.days button {
+    flex: 1;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid #1e2a38;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.days button:hover {
+    background: #c6ff00;
+    color: black;
+}
+
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: #c6ff00;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.footer{
+    padding: 60px 80px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-box {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-box h2{
+    color: #c6ff00;
+    margin-bottom: 15px;
+}
+
+.footer-box h3{
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-box a{
+    color: white;
+    display: block;
+    font-size: 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.footer-box a:hover{
+    color: #c6ff00;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+    flex-wrap: wrap;
+}
