@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Schedule</title>
+
+<link rel="stylesheet" href="Home.css">
+<link rel="stylesheet" href="FullSchedule.css">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav-bar">
+    <div class="nav-logo">
+        <header class="logo-circle">APU</header>
+        <span>SPORT 2026</span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="Home.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Sports.html">Sports</a>
+        <a href="Schedule.html">Schedule</a>
+        <a href="Register.html">Register</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="News.html">News</a>
+        <a href="Faq.html">FAQ</a>
+        <a href="Content.html">Content</a>
+    </nav>
+</div>
+
+<!-- MAIN -->
+<section class="calendar-container">
+
+    <h1>📅 August 2026</h1>
+    <p>Explore competitions and plan your journey</p>
+
+    <!-- WEEK -->
+    <div class="week">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+    </div>
+
+    <!-- GRID -->
+    <div class="calendar-grid" id="calendar"></div>
+
+</section>
+
+<!-- MODAL -->
+<div class="event-modal" id="eventModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">✖</span>
+        <h2 id="modal-date">August</h2>
+        <div id="modal-events"></div>
+    </div>
+</div>
+
+<!-- JS -->
+<script>
+const calendar = document.getElementById("calendar");
+const modal = document.getElementById("eventModal");
+const modalEvents = document.getElementById("modal-events");
+const modalDate = document.getElementById("modal-date");
+
+const events = {
+    2: ["🏀 Team Titans - Arena 1 (12PM)"],
+    5: ["🏀 Thunderhawks - Arena 2 (12PM)"],
+    9: ["🏀 Vortex Vipers - Arena 3 (12PM)"],
+    12: ["🏀 Blaze Bulls - Arena 4 (12PM)"],
+    16: ["🏀 Lightning Raptors - Arena 5 (12PM)"]
+};
+
+/* CREATE DAYS */
+for(let i = 1; i <= 31; i++){
+
+    let day = document.createElement("div");
+    day.classList.add("day");
+
+    if(events[i]){
+        day.classList.add("active-day");
+    }
+
+    day.innerHTML = `
+        <span>${i}</span>
+        ${events[i] ? '<div class="dots"></div>' : ''}
+    `;
+
+    day.onclick = () => showEvent(i);
+
+    calendar.appendChild(day);
+}
+
+/* SHOW EVENT */
+function showEvent(day){
+
+    modal.classList.add("show");
+    modalDate.innerText = "August " + day;
+
+    if(events[day]){
+        modalEvents.innerHTML = events[day]
+            .map(e => `<p>${e}</p>`)
+            .join("");
+    } else {
+        modalEvents.innerHTML = "<p>No events scheduled</p>";
+    }
+}
+
+/* CLOSE */
+function closeModal(){
+    modal.classList.remove("show");
+}
+</script>
+<footer class="footer">
+
+        <div class="footer-container">
+
+        <!-- Left -->
+            <div class="footer-box">
+                <h2>APU SPORT 2026</h2>
+                <p>
+                    Empowering the next generation of champions.
+                    Join the energy carnival and witness the transformation.
+                </p>
+            </div>
+
+        <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="About.html">Event Objectives</a>
+                <a href="Sports.html">Sport Categories</a>
+                <a href="Register.html">Register Now</a>
+                <a href="Schedule.html">Daily Schedule</a>
+            </div>
+
+        <!-- Community -->
+            <div class="footer-box">
+                <h3>Community</h3>
+                <a href="#">Become a Volunteer</a>
+                <a href="#">Photo Highlights</a>
+            </div>
+
+        <!-- Contact -->
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>Technology Park Malaysia,<br> Bukit Jalil, Kuala Lumpur</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 APU Sport Management. All Rights Reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
