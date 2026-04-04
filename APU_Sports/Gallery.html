@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="PyaePhyoHan TP082936">
     <link rel="stylesheet" href="Gallery.css">
-    <title>Document</title>
+    <title>Gallery Page</title>
 </head>
 <body>
 
@@ -140,35 +140,8 @@
 
     </footer>
 
+    <script src="gallery.js"></script>
 
-    <script>
-    document.querySelectorAll(".gallery-item img").forEach(img => {
-
-        img.addEventListener("click", () => {
-
-            const popup = document.createElement("div");
-            popup.classList.add("popup");
-
-            const bigImg = document.createElement("img");
-            bigImg.src = img.src;
-
-            const closeBtn = document.createElement("span");
-            closeBtn.innerHTML = "&times;";
-            closeBtn.classList.add("close-btn");
-
-            popup.appendChild(bigImg);
-            popup.appendChild(closeBtn);
-            document.body.appendChild(popup);
-
-            closeBtn.onclick = () => popup.remove();
-
-            popup.onclick = (e) => {
-                if (e.target !== bigImg) popup.remove();
-            };
-        });
-
-    });
-</script>
 
 
 </body>
