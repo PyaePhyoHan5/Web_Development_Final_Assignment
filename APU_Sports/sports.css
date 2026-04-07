@@ -4,10 +4,16 @@
     box-sizing:border-box;
 }
 
+html, body{
+    height: auto;
+    min-height: 100%;
+}
+
 body{
     background: radial-gradient(circle at top, #0a0f1c, #02040a);
     color:white;
     padding-top:80px;
+    
 }
 
 
@@ -25,9 +31,16 @@ body{
 
 /* GRID */
 .sports-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 900px;
+    margin: 0 auto;
+}
+
+
+footer{
+    margin-top: 40px; /* small natural spacing */
 }
 
 /* CARD */
@@ -62,10 +75,12 @@ body{
 }
 
 /* CONTENT */
+/* CARD CONTENT */
 .card-content{
     position:absolute;
-    bottom:20px;
-    left:20px;
+    bottom:18px;
+    left:18px;
+    right:18px;
     z-index:2;
 
     opacity:0;
@@ -190,4 +205,27 @@ body{
 @keyframes fadeIn{
     from{opacity:0; transform:scale(0.9);}
     to{opacity:1; transform:scale(1);}
+}
+
+.btn-group{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+}
+
+/* VIEW MORE BUTTON */
+.view-btn{
+    padding:10px 16px;
+    border:none;
+    border-radius:20px;
+    background:#b6ff00;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.view-btn:hover{
+    transform:translateY(-2px);
+    background:#d4ff33;
 }

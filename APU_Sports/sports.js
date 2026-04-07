@@ -1,3 +1,5 @@
+console.log("JS WORKING");
+
 const sportsData = [
 {
     name:"Badminton",
@@ -7,7 +9,6 @@ const sportsData = [
     email:"badminton@apu.edu",
     advisor:"Mr. Lim"
 },
-
 {
     name:"Basketball",
     desc:"Be part of our basketball team and train professionally.",
@@ -16,7 +17,6 @@ const sportsData = [
     email:"basketball@apu.edu",
     advisor:"Mr. Kumar"
 },
-
 {
     name:"Futsal",
     desc:"Fast-paced futsal games and competitions every semester.",
@@ -25,7 +25,6 @@ const sportsData = [
     email:"futsal@apu.edu",
     advisor:"Mr. Wong"
 },
-
 {
     name:"Cricket",
     desc:"Join our cricket team and participate in inter-university matches.",
@@ -34,7 +33,6 @@ const sportsData = [
     email:"cricket@apu.edu",
     advisor:"Mr. Arjun"
 },
-
 {
     name:"Volleyball",
     desc:"Train and compete with APU volleyball club.",
@@ -43,16 +41,6 @@ const sportsData = [
     email:"volleyball@apu.edu",
     advisor:"Ms. Aina"
 },
-
-{
-    name:"Mobile Legends",
-    desc:"Competitive esports team with tournaments and training.",
-    img:"Sport_Image/Mobile Legends.png",
-    president:"Kevin Ong",
-    email:"ml@apu.edu",
-    advisor:"Mr. Daniel"
-},
-
 {
     name:"Honor of Kings",
     desc:"Strategic MOBA gameplay with pro-level training.",
@@ -61,15 +49,6 @@ const sportsData = [
     email:"hok@apu.edu",
     advisor:"Mr. Tan"
 },
-
-{
-    name:"FIFA",
-    desc:"Football simulation esports competitions and leagues.",
-    img:"Sport_Image/Fifa.png",
-    president:"Adam Zaki",
-    email:"fifa@apu.edu",
-    advisor:"Mr. Hafiz"
-}
 ];
 
 const grid = document.getElementById("sportsGrid");
@@ -82,24 +61,42 @@ sportsData.forEach(sport=>{
         <img src="${sport.img}" class="card-img">
 
         <div class="card-content">
-            <h3 class="card-title">${sport.name}</h3>
-            <button class="read-btn">Read More</button>
+            <div class="card-top">
+                <h3 class="card-title">${sport.name}</h3>
+                <button class="view-btn">View →</button>
+            </div>
         </div>
     `;
 
-    card.querySelector(".read-btn").onclick = (e)=>{
-        e.stopPropagation();
+    // CLICK CARD → OPEN MODAL
+    card.onclick = ()=>{
         openModal(sport);
     };
+
+    // VIEW MORE BUTTON → PAGE
+    card.querySelector(".view-btn").onclick = (e)=>{
+    e.stopPropagation();
+
+    let page = "";
+
+    switch(sport.name){
+        case "Badminton": page = "badminton.html"; break;
+        case "Basketball": page = "basketball.html"; break;
+        case "Futsal": page = "futsal.html"; break;
+        case "Cricket": page = "cricket.html"; break;
+        case "Volleyball": page = "volleyball.html"; break;
+        case "Honor of Kings": page = "hok.html"; break;
+    }
+
+    window.location.href = page;   // ✅ THIS IS THE FIX
+};
 
     grid.appendChild(card);
 });
 
+
 /* MODAL */
 const modal = document.getElementById("modal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
-const modalImg = document.getElementById("modalImg");
 
 function openModal(sport){
     modal.style.display = "flex";
@@ -108,15 +105,17 @@ function openModal(sport){
     document.getElementById("modalTitle").textContent = sport.name;
     document.getElementById("modalDesc").textContent = sport.desc;
 
-    document.getElementById("modalPresident").textContent = sport.president || "N/A";
-    document.getElementById("modalEmail").textContent = sport.email || "N/A";
-    document.getElementById("modalAdvisor").textContent = sport.advisor || "N/A";
+    document.getElementById("modalPresident").textContent = sport.president;
+    document.getElementById("modalEmail").textContent = sport.email;
+    document.getElementById("modalAdvisor").textContent = sport.advisor;
 }
 
+/* JOIN BUTTON */
 document.querySelector(".join-btn").onclick = ()=>{
     window.location.href = "register.html";
 };
 
+/* CLOSE MODAL */
 window.onclick = (e)=>{
     if(e.target === modal){
         modal.style.display = "none";
