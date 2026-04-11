@@ -2,25 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const submitBtn = document.querySelector(".submit-btn");
     const roles = document.querySelectorAll(".single-role");
+    const dayButtons = document.querySelectorAll(".day-btn");
 
     let selectedRole = null;
+    let selectedDay = null;
 
-    // click role
+    // 🔹 ROLE SELECTION
     roles.forEach(role => {
         role.addEventListener("click", function () {
 
-            // remove previous selection
             roles.forEach(r => r.classList.remove("active"));
-
-            // highlight selected
             this.classList.add("active");
 
-            // store selected role
             selectedRole = this.querySelector("h3").innerText;
         });
     });
 
-    // submit button
+    // 🔹 DAY SELECTION
+    dayButtons.forEach(button => {
+        button.addEventListener("click", function () {
+
+            dayButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            selectedDay = this.innerText;
+        });
+    });
+
+    // 🔹 SUBMIT
     submitBtn.addEventListener("click", function () {
 
         if (!selectedRole) {
@@ -28,8 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // optional: store role
+        if (!selectedDay) {
+            alert("Please select a day!");
+            return;
+        }
+
+        // store data
         localStorage.setItem("selectedRole", selectedRole);
+        localStorage.setItem("selectedDay", selectedDay);
 
         window.location.href = "RegistrationSuccessful.html";
     });
