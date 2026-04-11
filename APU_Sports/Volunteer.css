@@ -134,6 +134,26 @@ a.active {
     color: black;
 }
 
+.single-role:has(input:checked) {
+    border: 2px solid #c6ff00;
+    background: rgba(198, 255, 0, 0.05);
+    box-shadow: 0 0 15px rgba(198, 255, 0, 0.4);
+}
+
+.single-role:has(input:checked) .role-number {
+    background: #c6ff00;
+    color: black;
+}
+
+.single-role {
+    transition: all 0.3s ease;
+}
+
+.single-role input[type="radio"] {
+    transform: scale(1.2);
+    accent-color: #c6ff00;
+}
+
 .form-box {
     flex: 1;
     background: #0b141c;
